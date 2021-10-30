@@ -1,0 +1,27 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class ParkingSystem1 {
+	int[] carcontainer = new int[3];
+	public ParkingSystem1(int b,int m,int s) {
+		carcontainer[0]=b;
+		carcontainer[2]=s;
+		carcontainer[1]=m;
+	}
+	public boolean addCar(int carType) {
+		if(carcontainer[carType-1]>0) {
+			carcontainer[carType-1]--;
+			return true;
+		}
+		return false;
+	}
+	
+	public static void main(String[] args) {
+		ArrayList<Integer> array=new ArrayList<Integer>();
+		ParkingSystem parkingSystem = new ParkingSystem(1, 1, 0);
+        System.out.println(parkingSystem.addCar(1));
+        System.out.println(parkingSystem.addCar(2));
+        System.out.println(parkingSystem.addCar(3));
+        System.out.println(parkingSystem.addCar(1));
+	}
+}
